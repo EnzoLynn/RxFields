@@ -25,7 +25,7 @@ class renderRcSelect extends Component {
                   </Option>);
         };
       
-        return (<Select {... this.props}   onChange={(val)=>{onTagSelect(null,val)}} 
+        return (<Select {...this.props}   onChange={(val)=>{onTagSelect(null,val)}} 
             value={tagSels}
           >
             {optsDom}
