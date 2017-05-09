@@ -17,6 +17,7 @@ class renderRcSelect extends Component {
             onTagSelect,
             tagSels
         } = this.props
+        console.log('renderRcSelect',this.props)
         return (<Select {... this.props}   onChange={(val)=>{onTagSelect(null,val)}} 
             value={tagSels}
           >
