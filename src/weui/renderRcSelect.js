@@ -17,10 +17,10 @@ class renderRcSelect extends Component {
             onTagSelect,
             tagSels
         } = this.props
-        let opts = options||[]
+        let opts = options||[],optsDom=[]
 
         for (var i = 0; i < opts.length; i++) {
-            opts.push(<Option key={opts[i].key}  title={opts[i].title}> 
+            optsDom.push(<Option key={opts[i].key}  title={opts[i].title}> 
                     {opts[i].text}
                   </Option>);
         };
@@ -28,7 +28,7 @@ class renderRcSelect extends Component {
         return (<Select {... this.props}   onChange={(val)=>{onTagSelect(null,val)}} 
             value={tagSels}
           >
-            {opts}
+            {optsDom}
           </Select>)
     }
 }
