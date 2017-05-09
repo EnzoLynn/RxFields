@@ -10,18 +10,25 @@ import Select, {
 } from 'rc-select/lib/index';
 
 class renderRcSelect extends Component {
-    render() { 
+    render() {
         const {
             input,
             options,
             onTagSelect,
             tagSels
         } = this.props
-        console.log('renderRcSelect',this.props)
+        let opts = options||[]
+
+        for (var i = 0; i < opts.length; i++) {
+            opts.push(<Option key={opts[i].key}  title={opts[i].title}> 
+                    {opts[i].text}
+                  </Option>);
+        };
+      
         return (<Select {... this.props}   onChange={(val)=>{onTagSelect(null,val)}} 
             value={tagSels}
           >
-            {options}
+            {opts}
           </Select>)
     }
 }
