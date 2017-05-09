@@ -11,7 +11,7 @@
     "type": "git",
     "url": "https://git@github.com/EnzoLynn/RxFields.git"
   },
-  "main": "dist/IndexDBHelper.js",
+  "main": "dist/weui/RxFields.js",
   "dependencies": {
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
