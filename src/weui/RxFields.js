@@ -7,5 +7,5 @@ export {
 	CheckboxGroup,
 	RadioGroup,
 	renderField,
-	renderRcSelect,
+	renderRcSelect
 }
