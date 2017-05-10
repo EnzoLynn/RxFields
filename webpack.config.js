@@ -1,11 +1,9 @@
 var webpack = require('webpack');
 var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
-var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
-// var CopyWebpackPlugin = require('copy-webpack-plugin');
+var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin"); 
 module.exports = {
     entry: {
-        '/weui/RxFields': './src/weui/RxFields.js',
-        // 'test': './src/test.js'
+        '/weui/RxFields': './src/weui/RxFields.js' 
     },
     output: {
         path: __dirname + '/dist',
@@ -42,53 +40,15 @@ module.exports = {
                 'NODE_ENV': JSON.stringify('production')
             }
         }),
-        // new CopyWebpackPlugin([
-
-        //     // // {output}/to/file.txt 
-        //     // { from: 'from/file.txt', to: 'to/file.txt' },
-
-        //     // // {output}/to/directory/file.txt 
-        //     // { from: 'from/file.txt', to: 'to/directory' },
-
-        //     // // Copy directory contents to {output}/ 
-        //     // { from: 'from/directory' },
-
-        //     // // Copy directory contents to {output}/to/directory/ 
-        //     // { from: 'from/directory', to: 'to/directory' },
-
-        //     // Copy glob results to /absolute/path/ 
-        //     // { from: 'bundle/**/*', to: 'E:/publicJsCore/reactExample' },
-        //     // { from: 'css/**/*', to: 'E:/publicJsCore/reactExample' },
-        //     // { from: 'less/**/*', to: 'E:/publicJsCore/reactExample' },
-        //     // { from: 'images/**/*', to: 'E:/publicJsCore/reactExample' },
-        //     // { from: '*.*', to: 'E:/publicJsCore/reactExample' },
-        //     // { from: 'src/**/*', to: 'E:/publicJsCore/reactExample' }
-
-
-
-        // ]),
+      
          new uglifyJsPlugin({
              output: {
-                comments: false, // remove all comments
+                comments: false,  
             },
             compress: {
                 warnings: false
             }
-        }),
-        // new CommonsChunkPlugin(({
-        //     name: "common.js",
-        //     // (the commons chunk name)
-
-        //     filename: "./js/common.js",
-        //     // (the filename of the commons chunk)
-
-        //     // minChunks: 3,
-        //     // (Modules must be shared between 3 entries)
-
-        //     // chunks: ["pageA", "pageB"],
-        //     // (Only use these entries)
-        // }))
-
+        }) 
     ]
 
 };
